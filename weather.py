@@ -4,7 +4,7 @@ from geopy.exc import GeocoderTimedOut
 import ssl
 
 #some special weather add emoji
-def whether_type(description):
+def weather_type(description):
     if description == "clear sky":
         return "clear sky🌞"
     elif description == "few clouds":
@@ -61,7 +61,7 @@ def get_weather(api_key):
         description = data['weather'][0]['description']
         icon = data['weather'][0]['icon']
         print(f"Current Location: {city}")
-        print(f"Weather: {whether_type(description)}")
+        print(f"Weather: {weather_type(description)}")
         print(f"Temperature: {temp}°C, {temp_feel(temp)}")
         print(description)
     else:
